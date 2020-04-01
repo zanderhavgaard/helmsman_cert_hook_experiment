@@ -4,8 +4,6 @@ metadata:
 
 namespaces:
   cert-test:
-    # labels:
-      # env: "cert-test"
 
 helmRepos:
   stable: "https://kubernetes-charts.storage.googleapis.com"
