@@ -1,0 +1,21 @@
+# version: v3.2.0
+metadata:
+  description: "Test adding certificates as secrets in helmsman file, requires version 3.2.0"
+
+namespaces:
+  cert-test:
+    # labels:
+      # env: "cert-test"
+
+helmRepos:
+  stable: "https://kubernetes-charts.storage.googleapis.com"
+
+apps:
+
+  app-that-needs-a-cert:
+    chart: stable/jenkins
+    version: 1.9.24
+    enabled: true
+    namespace: cert-test
+    hooks:
+      preInstall: "apply_cert_secret.yml"
